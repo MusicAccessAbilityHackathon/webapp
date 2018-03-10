@@ -1,0 +1,16 @@
+{
+  "short_name": "SeeMyMusic",
+  "name": "SeeMyMusic",
+  "background_color": "#2196F3",
+  "theme_color": "#2196F3",
+  "display": "standalone",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://data.apksum.com/1f/com.android.mediacenter/screenhost/icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "index.html"
+}
