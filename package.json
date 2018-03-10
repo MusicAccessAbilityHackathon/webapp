@@ -1,0 +1,25 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "Music visualization",
+  "main": "index.js",
+  "scripts": {
+    "dev": "http-server ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MusicAccessAbilityHackathon/webapp.git"
+  },
+  "keywords": [
+    "music"
+  ],
+  "author": "Cool peeps",
+  "license": "ISC",
+  "homepage": "https://github.com/MusicAccessAbilityHackathon/webapp#readme",
+  "dependencies": {
+    "p5": "^0.6.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
