@@ -1,8 +1,8 @@
 {
   "short_name": "SeeMyMusic",
   "name": "SeeMyMusic",
-  "background_color": "#2196F3",
-  "theme_color": "#2196F3",
+  "background_color": "#F47825",
+  "theme_color": "#F47825",
   "display": "standalone",
   "orientation": "portrait",
   "icons": [
