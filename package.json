@@ -2,10 +2,6 @@
   "name": "webapp",
   "version": "1.0.0",
   "description": "Music visualization",
-  "main": "index.js",
-  "scripts": {
-    "dev": "http-server ."
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MusicAccessAbilityHackathon/webapp.git"
@@ -16,10 +12,21 @@
   "author": "Cool peeps",
   "license": "ISC",
   "homepage": "https://github.com/MusicAccessAbilityHackathon/webapp#readme",
-  "dependencies": {
-    "p5": "^0.6.0"
+  "scripts": {
+    "dev": "ts-node -O '{\"module\":\"commonjs\"}' ./node_modules/.bin/webpack --mode development --watch --progress",
+    "build": "NODE_ENV=production ts-node -O '{\"module\":\"commonjs\"}' ./node_modules/.bin/webpack --mode production",
+    "serve": "http-server ."
   },
   "devDependencies": {
-    "http-server": "^0.11.1"
+    "@types/webpack": "^4.1.1",
+    "http-server": "^0.11.1",
+    "ts-loader": "^4.1.0",
+    "ts-node": "^5.0.1",
+    "typescript": "^2.7.2",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12"
+  },
+  "dependencies": {
+    "lit-html": "^0.9.0"
   }
 }
