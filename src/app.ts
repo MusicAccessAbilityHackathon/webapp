@@ -1,21 +1,11 @@
 import { html, render } from 'lit-html/lib/lit-extended';
-import { TemplateResult } from 'lit-html';
+import { Subject } from 'rxjs/Subject';
+import 'rxjs/add/operator/startWith';
 
-import { Component, initialize } from './framework';
+import { Component, Store, AppState } from './framework';
 import { GooeyMenu } from './components/gooey-menu';
 
-export const Button: Component<ButtonProps> = (props) => {
-  return html`
-    <button onclick="${props.engage}">Engage</button>
-  `;
-};
-
-export const App: Component<AppProps> = (props) => {
-  const engage = () => {
-    console.log(props.name);
-    props.dispatch({name: 'Alec'});
-  };
-
+export const App: Component<AppProps> = () => {
   return html`<div>
     <div style="width: 100%; height: 100%;">
       ${GooeyMenu({})}
@@ -23,16 +13,15 @@ export const App: Component<AppProps> = (props) => {
   </div>`;
 };
 
-// FIXME: Global store :(
-const store = {};
+export const action = new Subject<AppState>();
+export const store: Store = action.startWith({
+  // TODO(alecmerdler): Define initial app state
+  menuOpen: false,
+});
 
-initialize(store)({})(App);
+store.subscribe((state) => {
+  console.log(state);
+  render(App({}), document.getElementById('app'));
+});
 
-type AppProps = {
-  name: string;
-  dispatch: (newStore: any) => void;
-};
-
-export type ButtonProps = {
-  engage: () => void;
-};
+export type AppProps = {};

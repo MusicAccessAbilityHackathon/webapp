@@ -21,7 +21,6 @@ h1 {
   font-size: 3em;
 }
 
-/* TODO(alecmerdler): Mobile-friendly pixel sizing */
 .menu {
   -webkit-filter: url("./gooey-menu.svg");
           filter: url("./gooey-menu.svg");
